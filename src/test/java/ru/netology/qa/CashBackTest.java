@@ -1,8 +1,8 @@
 package ru.netology.qa;
 
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class CashBackTest {
     private final CashBack service = new CashBack();
@@ -12,21 +12,23 @@ public class CashBackTest {
 
         int amount = 900;
 
-        int expected = 100;
         int actual = service.remain(amount);
-        Assertions.assertEquals(expected, actual);
+        int expected = 100;
+
+        Assert.assertEquals(actual, expected);
 
 
     }
+
     @Test
     public void AmountTheBorder() {
 
         int amount = 1000;
 
-        int expected = 0;
         int actual = service.remain(amount);
+        int expected = 0;
 
-        Assertions.assertEquals(expected, actual);
+        Assert.assertEquals(actual, expected);
     }
 
 }
