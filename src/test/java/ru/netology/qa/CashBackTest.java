@@ -1,8 +1,8 @@
 package ru.netology.qa;
 
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Test;
+import org.junit.Assert;
 
 public class CashBackTest {
     private final CashBack service = new CashBack();
@@ -12,10 +12,9 @@ public class CashBackTest {
 
         int amount = 900;
 
-        int actual = service.remain(amount);
         int expected = 100;
-
-        Assert.assertEquals(actual, expected);
+        int actual = service.remain(amount);
+        Assert.assertEquals(expected, actual);
 
 
     }
@@ -25,10 +24,9 @@ public class CashBackTest {
 
         int amount = 1000;
 
-        int actual = service.remain(amount);
         int expected = 0;
-
-        Assert.assertEquals(actual, expected);
+        int actual = service.remain(amount);
+        Assert.assertEquals(expected, actual);
     }
 
 }
